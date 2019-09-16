@@ -19,6 +19,8 @@ os.chdir(r'C:\Users\dcamp\Documents\python-practice\Deep learning')
 print('first exersize'.upper())
 df = pd.read_csv('mnist.csv')
 print(df.head())
+print(df.tail())
+print(df.info())
 X = []
 y = []
 n_labels = 10
@@ -49,3 +51,5 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 early_stopping_monitor = EarlyStopping(patience=5)
 # Fit the model
 model.fit(X_array, y_array,epochs=50, validation_split=0.2, callbacks=[early_stopping_monitor])
+
+# model.save('model_numbers.h5')
